@@ -12,6 +12,11 @@ input{
 input[type=submit]{
 	cursor:pointer;
 }
+input[type=checkbox]{
+	transform: scale(3);
+}
+
+
 button:hover{
 	cursor: pointer;
 }
@@ -50,11 +55,13 @@ button:hover{
 
 .inp-def{
 	border: none;
-	padding: 5px 0 ;
+	padding: 0px 0 ;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
 	background-color: #fff;
 	padding-left: 5px;
 	font-size: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 
 }
 
@@ -90,7 +97,9 @@ button:hover{
 .w-90{
 	width: 90%;
 }
-
+.poinet{
+	cursor: pointer;
+}
 
 .margin-10{
 	margin: 10px;
@@ -123,6 +132,13 @@ button:hover{
 	color: rgb(22,143,190) !important;
 }
 
+.white{
+	color:#fff !important;
+}
+.black{
+	color:black;
+}
+
 .b-white{
 	background-color: #fff;
 }
@@ -140,8 +156,15 @@ li{
 .txt-18{
 	font-size: 18px;
 }
+.txt-48{
+	font-size: 48px;
+}
 .ml-5{
 	margin-left: 5px;
+}
+
+.ml-15{
+	margin-left: 15px;
 }
 .mr-5{
 	margin-right: 5px;
@@ -150,6 +173,34 @@ li{
 .mt-10{
 	margin-top: 10px;
 }
+.mt-70{
+	margin-top: 70px;
+}
 .mt-0{
 	margin-top: 0px;
+}
+.mb-20{
+	margin-bottom: 20px;
+}
+
+
+.menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 2024px;
+	box-shadow: 100px 8px 18px 100px rgba(0,0,0,0.4);
+	width: 90%;
+	display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width:1024px){
+
+.inp-def{
+	height: 100px !important;
+}
+.btn-def{
+	height: 100px !important;
+}
+
 }

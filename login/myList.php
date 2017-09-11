@@ -15,15 +15,36 @@
 	}
 	require('../php/recover.php');
 
- ?>
-	<div class="w-100 txt-18"><?php echo $myGroups ?><a href="../php/exit.php"><p class="right w-33 d-inline txt-rigth red mt-0">Salir<i class="fa fa-close ml-5"></i></p></a></div>
+ ?> <div>
+ 	
+	<p class="w-45 left"><i onclick="displayMenu()" class="fa fa-navicon" style="font-size:75px; position: absolute; top: 50px;left:0;margin:10px;cursor: pointer"></i></p>
+ 	<p class="w-45 rigth"  style="font-size: 80px"><?php echo $thisGroup ?></p>
+ </div>
+	<?php echo $products ?>
 			
-			<?php echo $thisGroup ?>
+			
+			
 			<br>
-			<br>
-			<?php echo $createGroup ?>
-			<?php echo $users ?>
-			<?php echo $products ?>
+			
+			
+			
+
+
+			<div id="menu" class="menu">
+				<p onclick="closeMenu()" class="red center"><i class="fa fa-close pointer" style="font-size:48px;color:red"></i>CERRAR</p>
+				<br>
+				
+				<?php echo $createGroup ?>
+				<br>
+				<div class="w-100 txt-48 center"><?php echo $myGroups ?></div> 
+				<br>
+				
+				<?php if(isset($close)){echo $close;} ?>
+				
+				
+				
+				<?php echo $users ?>
+			</div>
 		<script src="../javascript/script.js"></script>
 </body>
 </html>
