@@ -5,6 +5,7 @@
 	<title>Mi lista</title>
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <?php 
@@ -23,6 +24,6 @@
 			<?php echo $createGroup ?>
 			<?php echo $users ?>
 			<?php echo $products ?>
-		
+		<script src="../javascript/script.js"></script>
 </body>
 </html>

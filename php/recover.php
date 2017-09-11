@@ -42,7 +42,7 @@ try {
 
 
 
-		$query = 'SELECT * FROM products WHERE Prod_Group = :group';
+		$query = 'SELECT * FROM products WHERE Prod_Group = :group ORDER BY Prod_Status DESC';
 		$result = $base -> prepare($query);
 		$result -> bindValue(':group', $group);
 		$result -> execute();
@@ -58,7 +58,19 @@ try {
 	
 		<table class="w-100 txt-left">';
 		while($row = $result -> fetch(PDO::FETCH_ASSOC)){
-			$products .= '<tr><th><form method="post" action"../php/removeProduct.php"><input type="checkbox" style="transform:scale(2); vertical-align:super" name="product" id="'.$row['Prod_Id'].'" value="'.$row['Prod_Id'].'" onclick="removeProduct(this.id)"><label class="blue" style="font-size:35px; padding-left:10px" for="prod_1">'.$row['Prod_Name'].'</label><label class="noBold">('.$row['Prod_User'].')</label></th></form></tr>';
+
+			if($row['Prod_Status'] == 1){
+				$products .= '<tr class="blue" ><th><form method="post" action="../php/removeProduct.php"><input type="checkbox" style="transform:scale(2); vertical-align:super" name="product" id="'.$row['Prod_Id'].'" value="'.$row['Prod_Id'].'" onclick="removeProduct(this.id)"><label style="font-size:35px; padding-left:10px" for="prod_1">'.$row['Prod_Name'].'</label><label class="noBold">('.$row['Prod_User'].')</label></th><input type="text" style="display:none" name="group" value="'.$groupId.'"></form></tr>';
+			}else if($row['Prod_Status'] == 0){
+				$products .= '<tr class="red" ><th><input type="checkbox" checked disabled style="transform:scale(2); vertical-align:super" name="product" id="'.$row['Prod_Id'].'" value="'.$row['Prod_Id'].'" onclick="removeProduct(this.id)"><label style="font-size:35px; padding-left:10px" for="prod_1">'.$row['Prod_Name'].'</label><label class="noBold">('.$row['Prod_User'].')</label></th></tr>';
+			}else{
+
+			}
+
+
+
+
+			
 		}
 		$products .= '</table></div>';
 

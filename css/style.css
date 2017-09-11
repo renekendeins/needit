@@ -9,6 +9,13 @@ input{
 	border-radius: 0px !important;
 }
 
+input[type=submit]{
+	cursor:pointer;
+}
+button:hover{
+	cursor: pointer;
+}
+
 #header{
 	width: 100% !important;
 	height: 100%;
